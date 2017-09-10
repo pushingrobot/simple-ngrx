@@ -1,12 +1,12 @@
 import {
   initialState,
-  counterReducer,
+  reducer,
   INCREMENT,
   DECREMENT,
   RESET
 } from './counter.reducer';
 
-describe('CounterReducer', () => {
+describe('reducer', () => {
 
   const Actions = {
     increment: {type: INCREMENT},
@@ -18,7 +18,7 @@ describe('CounterReducer', () => {
     it('should return the default state', () => {
       const action = {} as any;
 
-      const result = counterReducer(undefined, action);
+      const result = reducer(undefined, action);
       expect(result).toEqual(initialState);
     });
   });
@@ -26,9 +26,9 @@ describe('CounterReducer', () => {
     it('should increase the counter by one', () => {
       const action = Actions.increment;
 
-      let result = counterReducer(0, action);
+      let result = reducer(0, action);
       expect(result).toEqual(1);
-      result = counterReducer(result, action);
+      result = reducer(result, action);
       expect(result).toEqual(2);
     });
   });
@@ -36,9 +36,9 @@ describe('CounterReducer', () => {
     it('should decrease the counter by one', () => {
       const action = Actions.decrement;
 
-      let result = counterReducer(1, action);
+      let result = reducer(1, action);
       expect(result).toEqual(0);
-      result = counterReducer(result, action);
+      result = reducer(result, action);
       expect(result).toEqual(-1);
     });
   });
@@ -46,8 +46,8 @@ describe('CounterReducer', () => {
     it('should reset the counter to the initial value', () => {
       const action = Actions.reset;
 
-      const changed = counterReducer(initialState, Actions.increment);
-      const result = counterReducer(changed, action);
+      const changed = reducer(initialState, Actions.increment);
+      const result = reducer(changed, action);
       expect(result).toEqual(initialState);
     });
   });

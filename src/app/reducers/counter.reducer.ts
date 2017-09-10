@@ -1,5 +1,4 @@
-// counter.reducer.ts
-import { Action } from '@ngrx/store';
+import { Action, ActionReducerMap } from '@ngrx/store';
 
 export type State = number;
 
@@ -9,7 +8,7 @@ export const INCREMENT = 'INCREMENT';
 export const DECREMENT = 'DECREMENT';
 export const RESET = 'RESET';
 
-export function counterReducer(
+export function reducer(
   state: number = initialState,
   action: Action
 ): State {
