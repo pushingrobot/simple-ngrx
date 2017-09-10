@@ -3,12 +3,14 @@ import { Action } from '@ngrx/store';
 
 export type State = number;
 
+export const initialState = 0;
+
 export const INCREMENT = 'INCREMENT';
 export const DECREMENT = 'DECREMENT';
 export const RESET = 'RESET';
 
 export function counterReducer(
-  state: number = 0,
+  state: number = initialState,
   action: Action
 ): State {
   switch (action.type) {

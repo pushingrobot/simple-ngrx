@@ -10,14 +10,15 @@ interface AppState {
 @Component({
   selector: 'sn-root',
   template: `
+    <h1>Welcome to {{ title }}!</h1>
     <p>
       app Works!
     </p>
-    <button (click)="increment()">Increment</button>
-		<div>Current Count: {{ counter$ | async }}</div>
-		<button (click)="decrement()">Decrement</button>
+    <button id="increment" (click)="increment()">Increment</button>
+		<div id="counter">Current Count: {{ counter$ | async }}</div>
+		<button id="decrement" (click)="decrement()">Decrement</button>
 
-		<button (click)="reset()">Reset Counter</button>
+		<button id="reset" (click)="reset()">Reset Counter</button>
   `,
   styles: []
 })
